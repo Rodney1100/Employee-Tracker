@@ -33,7 +33,7 @@ VALUES
   ('Derek', 'Jarman', 3, 1),
   ('Jack', 'Black', 2, 1),
   ('Paola', 'Dean', 3, 1),
-  ('Samuel', 'Hash', 5, 7),
+  ('Samuel', 'Hash', 5, 2),
   ('Alexander', 'TheGreat', 4, NULL),
   ('John', 'Bennett', 1, 1),
   ('Bruce', 'Almighty', 3, 1);
