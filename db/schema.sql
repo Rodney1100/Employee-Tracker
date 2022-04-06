@@ -1,15 +1,10 @@
-DROP TABLE IF EXISTS employees
-DROP TABLE IF EXISTS roles
-DROP TABLE IF EXISTS depts
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS roles;
+DROP TABLE IF EXISTS depts;
 
-CREATE TABLE employees(
+CREATE TABLE depts(
   id INTEGER AUTO_INCREMENT PRIMARY KEY,
-  first_name VARCHAR(30) NOT NULL,
-  last_name VARCHAR(30) NOT NULL,
-  role_id INTEGER,
-  manager_id INTEGER,
-  CONSTRAINT fk_role FORGEIN KEY (role_id) REFERENCES roles(id) ON DELETE SET NULL
-  CONSTRAINT fk_manager FORGEIN KEY (manager_id) REFERENCES employees(id) ON DELETE SET NULL
+  name VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE roles(
@@ -17,10 +12,16 @@ CREATE TABLE roles(
   title VARCHAR(30) NOT NULL,
   salary DECIMAL(10,2) NOT NULL,
   dept_id INTEGER,
-  CONSTRAINT fk_depts FORGEIN KEY (dept_id) REFERENCES depts(id) ON DELETE SET NULL
+  CONSTRAINT fk_depts FOREIGN KEY (dept_id) REFERENCES depts(id) ON DELETE SET NULL
 );
 
-CREATE TABLE depts(
+CREATE TABLE employees(
   id INTEGER AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(30) NOT NULL,
+  first_name VARCHAR(30) NOT NULL,
+  last_name VARCHAR(30) NOT NULL,
+  role_id INTEGER,
+  manager_id INTEGER,
+  CONSTRAINT fk_role FOREIGN KEY (role_id) REFERENCES roles(id) ON DELETE SET NULL,
+  CONSTRAINT fk_manager FOREIGN KEY (manager_id) REFERENCES employees(id) ON DELETE SET NULL
 );
+
