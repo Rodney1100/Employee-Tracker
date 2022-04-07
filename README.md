@@ -5,8 +5,8 @@ A brief description of what this project does and who it's for
 
 ## Deployment and Installation 
 
-This app is not deployed, however you can clone this Repository and 
-follow the dependentcies to make the app run in the command line.
+This app has not been deployed. However, you can clone this Repository and 
+follow the dependencies to make the app run on the command line.
 ## Demo
 
 https://drive.google.com/file/d/1f9tBNYJ9mbSYbrrjesIVUR6CLefZAMw1/view
